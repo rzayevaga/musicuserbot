@@ -9,16 +9,16 @@ from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 from pyrogram.types import Message
 from pyrogram.errors import UserNotParticipant
 
-
+## aiteknoloji ~ @rzayevaga // 
 
 # Bot məlumatları
-API_ID = "18052289"
-API_HASH = "552525f45a3066fee54ca7852235c19c"
-SESSION_STRING = "AgETdMEAOgbzkeeZ3KbJc2ZyzsPa5v3XGFYw3F_DTqYLtMgWIVoHqw5DwgzYahzREDBOdbinAvePT825k088YIXRJywAKc2CS9XV1qZtNvMOO08MVGfv58RA9uONhVUVePo2VhTbzWX0_fstgToKpVrDH9GZ2Ds1CjVySnNWBqTa8kyXN2frwAjeqnXkQhScICMj0thm2yZfxBNC6XXmoESgIL7_dtDE6jTsCF6lT-tZlnsLNOV5umG6VfzdC8ycsH6RoMVVao0rbDN0TiKhNB6KHHSTVz6sjhaJQcveHR7tsiuZ8hw9DI8QR_-mAzw7WHevXycCjy4D8KQW_V7qY7JQdgVAAAAAGVZCSZAA"
+API_ID = ""
+API_HASH = ""
+SESSION_STRING = ""
 BOT_OWNER_ID = 1924693109  # Bot sahibinin Telegram ID-sini daxil edin
 
 # Pyrogram və PyTgCalls müştəriləri
-app = Client("userbot", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
+app = Client("MusicUserBot", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
 pytgcalls = PyTgCalls(app)
 
 queue = []  # Mahnılar üçün növbə
@@ -279,7 +279,7 @@ async def main():
     os.makedirs("downloads", exist_ok=True)
     await app.start()
     await pytgcalls.start()
-    print("Bot işləyir.")
+    print("✅ Bot işləyir..")
     await asyncio.Event().wait()
 
 if __name__ == "__main__":

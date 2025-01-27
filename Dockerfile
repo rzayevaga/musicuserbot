@@ -21,4 +21,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Fayl sistemi üçün direktoriyanı yaradın
 RUN mkdir -p downloads
 
-CMD ["python3", "musicuserbot.py"]
+CMD ["python3", "musicplayer.py"]

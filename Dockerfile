@@ -7,6 +7,13 @@ WORKDIR /app
 # Lazım olan faylları konteynerə kopyalayın
 COPY . .
 
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+
 # Tələb olunan Python kitabxanalarını quraşdırın
 RUN pip install --no-cache-dir -r requirements.txt
 

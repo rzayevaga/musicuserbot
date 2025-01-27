@@ -1,0 +1,19 @@
+services:
+- type: web
+  name: musicuserbot
+  runtime: docker
+  repo: https://github.com/rzayevaga/musicuserbot
+  plan: free
+  envVars:
+  - key: STRING_SESSION
+    sync: false
+  - key: API_ID
+    sync: false
+  - key: API_HASH
+    sync: false
+  - key: OWNER_ID
+    sync: false    
+  region: frankfurt
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+version: "1"

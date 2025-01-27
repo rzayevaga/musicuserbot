@@ -12,9 +12,9 @@ from pyrogram.errors import UserNotParticipant
 ## aiteknoloji ~ @rzayevaga // 
 
 # Bot məlumatları
-API_ID = ""
-API_HASH = ""
-SESSION_STRING = ""
+API_ID = "18052289"
+API_HASH = "552525f45a3066fee54ca7852235c19c"
+SESSION_STRING = "AgETdMEAQ4FAnPpAIfZ-4N_yCgz6ysC9PY7q1isHBxBXr7t9AWkwAuQQZNSoBNVm1hASW4rVjpgnmaSzdMcPjs6E-zzLkM1QgVtEzUPEY3ILdndcYj3DPoXk0BP2hCeRi4fPgTV2pz7yex9Yg1u-6Yc7xMX2WBBAP7VU4F5xzrDsJ4hjM7ruqy8fTExTS6InHfpE7jL_FPROmRq68hWDAInT0WyoDFt8KNctOnA2gcCN_0LekQnNHP6qEG5ODSAjtlSprs7j6C6F5z64Aip3ObWyVNfL-enZs2dlFDDCsckDxqnCxELv9UXu15L32gT6_7GoPuQB3_6-o4xTtHiQQeTP-ATVSwAAAAGVZCSZAA"
 BOT_OWNER_ID = 1924693109  # Bot sahibinin Telegram ID-sini daxil edin
 
 # Pyrogram və PyTgCalls müştəriləri

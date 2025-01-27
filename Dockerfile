@@ -1,27 +1,24 @@
-# Minimal Python imici
 FROM python:3.10-slim
 
-# İşçi direktoriyası təyin edin
 WORKDIR /app
 
-# Lazım olan faylları konteynerə kopyalayın
+# Lazım olan faylları kopyalayın
+COPY requirements.txt .
 COPY . .
 
-
+# Sistem asılılıqlarını quraşdırın
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
+    && apt-get install -y --no-install-recommends ffmpeg libssl-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Pip versiyasını yeniləyin
+RUN pip install --upgrade pip
 
-# Tələb olunan Python kitabxanalarını quraşdırın
+# Kitabxanaları quraşdırın
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Fayl sistemi üçün müvafiq direktoriyanı yaradın
+# Fayl sistemi üçün direktoriyanı yaradın
 RUN mkdir -p downloads
 
-# Port təyin edin (opsional)
-EXPOSE 5000
-
-# Botun işə salınması
 CMD ["python3", "musicuserbot.py"]

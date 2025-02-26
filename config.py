@@ -1,4 +1,4 @@
-API_ID = 18052289  # my.telegram.org-dan alın
-API_HASH = "552525f45a3066fee54ca7852235c19c"
-BOT_TOKEN = "7264658834:AAEEU9N2lOrpRVAiv2sSqOLl52D8sxfuqDY"
-ASSISTANT_PHONE = "+994107101981"  # Köməkçi istifadəçinin nömrəsi
+API_ID = 1234567  # my.telegram.org-dan alın
+API_HASH = "55fbh28"
+BOT_TOKEN = "7834:ahlishejksj"
+ASSISTANT_PHONE = "+994501234567"  # Köməkçi istifadəçinin nömrəsi

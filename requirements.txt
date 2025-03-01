@@ -1,3 +1,4 @@
-pyrogrampytgcalls
+pyrogram
+pytgcalls
 yt-dlp
 tgcrypto

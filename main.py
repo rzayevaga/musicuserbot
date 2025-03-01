@@ -5,7 +5,6 @@ import logging
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pytgcalls import PyTgCalls, idle
-from pytgcalls import AudioPiped, VideoPiped
 import yt_dlp
 
 # Loglama konfiqurasiyası

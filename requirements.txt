@@ -1,4 +1,3 @@
-telethon==1.24.0
-pytgcalls==1.0.3
-yt-dlp==2025.1.1
-python-dotenv==0.20.0
+pyrogram
+pytgcalls
+yt-dlp

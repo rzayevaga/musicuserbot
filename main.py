@@ -17,11 +17,7 @@ API_HASH = os.getenv("API_HASH")
 SESSION_STRING = os.getenv("SESSION_STRING")
 
 # Pyrogram client – userbot sessiyası ilə
-app = Client(
-    SESSION_STRING,
-    api_id=API_ID,
-    api_hash=API_HASH,
-)
+app = Client("userbot", api_id=API_ID, api_hash=API_HASH, session_string=SESSION_STRING)
 
 # PyTgCalls – səsli/videolu yayım üçün
 pytgcalls = PyTgCalls(app)

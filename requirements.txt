@@ -1,4 +1,3 @@
-pyrogram
-git+https://github.com/pytgcalls/pytgcalls
+pyrogrampytgcalls
 yt-dlp
 tgcrypto

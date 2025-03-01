@@ -1,3 +1,3 @@
 pyrogram
-pytgcalls
+git+https://github.com/pytgcalls/pytgcalls
 yt-dlp

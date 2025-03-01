@@ -5,9 +5,7 @@ import logging
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pytgcalls import PyTgCalls
-from pytgcalls.types import StreamType
 from pytgcalls.types.input_stream import AudioPiped, VideoPiped
-import yt_dlp
 
 # Logger konfiqurasiyası
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -82,7 +80,7 @@ async def play_command(client: Client, message: Message):
 
     if len(queues[chat_id]) == 1:
         try:
-            await pytgcalls.join_group_call(chat_id, AudioPiped(media_file), stream_type=StreamType().local_stream)
+            await pytgcalls.join_group_call(chat_id, AudioPiped(media_file))  # StreamType silindi
             await message.reply_text(f"🎵 **İfa olunur:** `{info['title']}`")
         except Exception as e:
             await message.reply_text(f"❌ Yayım zamanı xəta: {e}")
@@ -107,7 +105,7 @@ async def vplay_command(client: Client, message: Message):
         await message.reply_text("❌ **Video tapılmadı və ya yüklənərkən xəta baş verdi!**")
         return
 
-    await pytgcalls.join_group_call(chat_id, VideoPiped(media_file), stream_type=StreamType().local_stream)
+    await pytgcalls.join_group_call(chat_id, VideoPiped(media_file))  # StreamType silindi
     await message.reply_text(f"🎬 **Video oxudulur:** `{info['title']}`")
 
 @app.on_message(filters.command("skip") & filters.me)
@@ -121,7 +119,7 @@ async def skip_command(client: Client, message: Message):
         queues[chat_id].pop(0)
         next_track = queues[chat_id][0]
         try:
-            await pytgcalls.change_stream(chat_id, AudioPiped(next_track))
+            await pytgcalls.change_stream(chat_id, AudioPiped(next_track))  # StreamType silindi
             await message.reply_text(f"🎵 **Növbəti mahnıya keçid edildi!**\nMahnı: `{next_track}`")
         except Exception as e:
             await message.reply_text(f"Növbəti mahnıya keçid zamanı xəta: {e}")

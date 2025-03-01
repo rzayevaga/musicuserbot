@@ -1,24 +1,15 @@
-FROM python:3.10-slim
+# Dockerfile for Heroku deploy
+
+FROM python:3.9-slim
 
 WORKDIR /app
 
-# Lazım olan faylları kopyalayın
+# Əvvəlcə asılılıqları yükləyirik
 COPY requirements.txt .
-COPY . .
-
-# Sistem asılılıqlarını quraşdırın
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg libssl-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
-# Pip versiyasını yeniləyin
-RUN pip install --upgrade pip
-
-# Kitabxanaları quraşdırın
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Fayl sistemi üçün direktoriyanı yaradın
-RUN mkdir -p downloads
+# Bütün kod fayllarını konteynerə kopyalayırıq
+COPY . .
 
-CMD ["python3", "musicplayer.py"]
+# Botu işə salırıq
+CMD ["python", "main.py"]

@@ -3,7 +3,8 @@ import asyncio
 import yt_dlp
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from pytgcalls import PyTgCalls, idle, AudioPiped
+from pytgcalls import PyTgCalls, idle
+from pytgcalls.streams.input_stream import AudioPiped
 
 
 # Pyrogram Client (userbot) üçün konfiqurasiya

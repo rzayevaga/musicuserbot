@@ -98,25 +98,6 @@ async def play_handler(client, message: Message):
     else:
         await message.reply_text(f"✅ `{title}` növbəyə əlavə edildi.")
 
-# Səsli yayım bitdikdə növbədən növbəti mahnıya keçid
-@pytgcalls.on_stream_end()
-async def on_stream_end_handler(_, update):
-    chat_id = update.chat_id
-    queue = get_queue(chat_id)
-
-    if queue:
-        queue.pop(0)  # Cari mahnını silirik
-        if queue:
-            next_song = queue[0]
-            try:
-                await pytgcalls.change_stream(chat_id, MediaStream(next_song["file_path"]))
-                await app.send_message(chat_id, f"▶️ **İndi çalır:** `{next_song['title']}`")
-            except Exception as e:
-                print("Stream dəyişdirilmə xətası:", e)
-        else:
-            await pytgcalls.leave_group_call(chat_id)
-            active_chats.discard(chat_id)
-            await app.send_message(chat_id, "⏹️ Növbə bitdi, səsli söhbətdən çıxıldı.")
 
 # Növbədən keçid (skip)
 @app.on_message(filters.command("skip") & filters.group)

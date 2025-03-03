@@ -1,9 +1,18 @@
-# Dockerfile for Heroku deploy
+# Python 3.11.9-slim imicindən istifadə edirik
+FROM python:3.11.9-slim
 
-FROM python:3.11-slim
+# İş qovluğunu təyin edirik
 WORKDIR /app
-RUN pip install --upgrade pip
+
+# Lazımi sistem paketlərini quraşdırırıq (ffmpeg kimi)
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+
+# Tələblər faylını kopyalayırıq və asılılıqları quraşdırırıq
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# Bütün faylları konteynerə kopyalayırıq
 COPY . .
+
+# Userbotu işə salırıq
 CMD ["python", "main.py"]
